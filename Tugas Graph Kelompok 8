@@ -23,3 +23,26 @@ class Peta:
                del self.citylist[kotadihapus] 
                return True
         return False
+
+def tambahkanjalan(self,kota1,kota2):
+        if kota1 in self.citylist and kota2 in self.citylist:
+            #masukan kota 1 di list kota 2
+            self.citylist[kota2].append(kota1)
+            #masukan kota2 di kota 1\
+            self.citylist[kota1].append(kota2)
+            return True
+        return False
+        
+    def hapusjalan(self,kota1,kota2):
+        if kota1 in self.citylist and kota2 in self.citylist:
+            #masukan kota 1 di list kota 2
+            self.citylist[kota2].remove(kota1)
+            #masukan kota2 di kota 1
+            self.citylist[kota1].remove(kota2)
+            return True
+        return False
+
+petamalang = Peta()
+petamalang.tambahkankota("wagir")
+petamalang.tambahkankota("tidaratas")
+petamalang.tambahkankota("singasari")
