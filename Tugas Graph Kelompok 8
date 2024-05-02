@@ -1,0 +1,25 @@
+class Peta: 
+    def _init_(self):
+        self.citylist = {}
+        
+    def printPeta(self):
+        for kota in self.citylist:
+            print(kota, ":",self.citylist[kota])
+            
+    def tambahkankota(self,kota):
+        if kota not in self.citylist:
+            self.citylist[kota] = []
+            return True
+        return False
+    
+    def hapuskota(self,kotadihapus):
+        #cek kota yang ingin di hapus
+        if kotadihapus in self.citylist:
+        #iterasi setiap kotalain untuk hapus kotadihapus
+               for kotalain in self.citylist:
+                   #cek apakah kota yang ingin di hapus ada jalan lain
+                   if kotadihapus in self.citylist[kotalain]:
+                       self.citylist[kotalain].remove(kotadihapus)
+               del self.citylist[kotadihapus] 
+               return True
+        return False
